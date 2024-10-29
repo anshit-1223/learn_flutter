@@ -5,11 +5,14 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int days = 30;
+    String ytchannel = "Codepur";
     return Scaffold(
       appBar: AppBar(
         title: Text("Catalog App"),
       ),
-      body: Center(child: Text("Welcome to 30 Days of Flutter!!")),
+      body:
+          Center(child: Text("Welcome to $days Days of Flutter by $ytchannel")),
       drawer: Drawer(),
     );
   }
