@@ -1,4 +1,6 @@
-import "package:day_01/home_page.dart";
+import "package:day_01/pages/home_page.dart";
+import "package:day_01/pages/login_page.dart";
+import "package:day_01/pages/splash_screen.dart";
 import "package:flutter/material.dart";
 
 void main() {
@@ -14,10 +16,21 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         appBarTheme: AppBarTheme(
-          color: Colors.blue,
+          color: Colors.lightBlueAccent,
+          titleTextStyle: TextStyle(
+            color: Colors.white,
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
+          ),
         ),
+        drawerTheme: DrawerThemeData(backgroundColor: Colors.black54),
       ),
-      home: HomePage(),
+      // initialRoute: SplashScreen(),
+      routes: {
+        "/": (context) => SplashScreen(),
+        "/home": (context) => HomePage(),
+        "/login": (context) => LoginPage(),
+      },
     );
   }
 }
