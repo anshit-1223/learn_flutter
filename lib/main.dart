@@ -14,8 +14,14 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         appBarTheme: AppBarTheme(
-          color: Colors.blue,
+          color: Colors.lightBlueAccent,
+          titleTextStyle: TextStyle(
+            color: Colors.white,
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
+          ),
         ),
+        drawerTheme: DrawerThemeData(backgroundColor: Colors.black54),
       ),
       home: HomePage(),
     );
