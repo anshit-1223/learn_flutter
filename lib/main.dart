@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         ),
         drawerTheme: DrawerThemeData(backgroundColor: Colors.black54),
       ),
-      // initialRoute: SplashScreen(),
+      initialRoute: "/",
       routes: {
         "/": (context) => SplashScreen(),
         "/home": (context) => HomePage(),
