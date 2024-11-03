@@ -1,3 +1,4 @@
+import "package:day_01/MyRoutes.dart";
 import "package:day_01/pages/home_page.dart";
 import "package:day_01/pages/login_page.dart";
 import "package:day_01/pages/splash_screen.dart";
@@ -28,8 +29,8 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
       routes: {
         "/": (context) => SplashScreen(),
-        "/home": (context) => HomePage(),
-        "/login": (context) => LoginPage(),
+        MyRoutes.homeRoute: (context) => HomePage(),
+        MyRoutes.loginRoute: (context) => LoginPage(),
       },
     );
   }
