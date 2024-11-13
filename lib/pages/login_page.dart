@@ -10,7 +10,8 @@ class LoginPage extends StatelessWidget {
     children:[
       Image.asset("assets/images/login_image.png"),
       Text("Login Page"),
+      TextField(),
         ]
-    );
+    )
   }
 }
