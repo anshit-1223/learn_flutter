@@ -1,6 +1,7 @@
 import 'package:day_01/MyRoutes.dart';
 import 'package:day_01/pages/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -11,6 +12,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   String name = "";
+  String password = "";
 
   @override
   Widget build(BuildContext context) {
@@ -49,6 +51,7 @@ class _LoginPageState extends State<LoginPage> {
                 onTap: () {
                   Text("Password");
                 },
+                onChanged: (value) => password = value,
               ),
               SizedBox(
                 height: 20,
@@ -56,9 +59,19 @@ class _LoginPageState extends State<LoginPage> {
               ElevatedButton(
                 onPressed: () {
                   Text("Log In");
-                  Navigator.pushNamed(context, MyRoutes.homeRoute);
+                  if (name != "" && password != "") {
+                    Navigator.pushNamed(context, MyRoutes.homeRoute);
+                  } else {
+                    Fluttertoast.showToast(
+                        msg: "Username or Password cannot be empty!!",
+                        toastLength: Toast.LENGTH_SHORT,
+                        gravity: ToastGravity.BOTTOM,
+                        backgroundColor: Colors.black54,
+                        textColor: Colors.white,
+                        fontSize: 16.0);
+                  }
                 },
-                child: Text("LOG IN"),
+                child: Text("LogIn"),
               )
             ],
           ),
