@@ -10,6 +10,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  String name = "";
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -26,12 +28,16 @@ class _LoginPageState extends State<LoginPage> {
                 height: 50,
               ),
               Image.asset("assets/images/login_image.png"),
-              Text("Welcome, User"),
+              Text("Welcome, $name"),
               TextFormField(
                 decoration: InputDecoration(
                     labelText: "Enter Username", hintText: "Username"),
                 onTap: () {
                   Text("Logged In");
+                },
+                onChanged: (value) {
+                  name = value;
+                  setState(() {});
                 },
               ),
               TextFormField(
