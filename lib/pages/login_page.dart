@@ -21,59 +21,61 @@ class _LoginPageState extends State<LoginPage> {
       child: Padding(
         padding: EdgeInsets.all(30),
         child: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(
-                height: 50,
-              ),
-              SizedBox(
-                height: 50,
-              ),
-              Image.asset("assets/images/login_image.png"),
-              Text("Welcome, $name"),
-              TextFormField(
-                decoration: InputDecoration(
-                    labelText: "Enter Username", hintText: "Username"),
-                onTap: () {
-                  Text("Logged In");
-                },
-                onChanged: (value) {
-                  name = value;
-                  setState(() {});
-                },
-              ),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: "Enter Password",
-                  hintText: "Password",
+          child: Form(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 50,
                 ),
-                obscureText: true,
-                onTap: () {
-                  Text("Password");
-                },
-                onChanged: (value) => password = value,
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  Text("Log In");
-                  if (name != "" && password != "") {
-                    Navigator.pushNamed(context, MyRoutes.homeRoute);
-                  } else {
-                    Fluttertoast.showToast(
-                        msg: "Username or Password cannot be empty!!",
-                        toastLength: Toast.LENGTH_SHORT,
-                        gravity: ToastGravity.BOTTOM,
-                        backgroundColor: Colors.black54,
-                        textColor: Colors.white,
-                        fontSize: 16.0);
-                  }
-                },
-                child: Text("LogIn"),
-              )
-            ],
+                SizedBox(
+                  height: 50,
+                ),
+                Image.asset("assets/images/login_image.png"),
+                Text("Welcome, $name"),
+                TextFormField(
+                  decoration: InputDecoration(
+                      labelText: "Enter Username", hintText: "Username"),
+                  onTap: () {
+                    Text("Logged In");
+                  },
+                  onChanged: (value) {
+                    name = value;
+                    setState(() {});
+                  },
+                ),
+                TextFormField(
+                  decoration: InputDecoration(
+                    labelText: "Enter Password",
+                    hintText: "Password",
+                  ),
+                  obscureText: true,
+                  onTap: () {
+                    Text("Password");
+                  },
+                  onChanged: (value) => password = value,
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Text("Log In");
+                    if (name != "" && password != "") {
+                      Navigator.pushNamed(context, MyRoutes.homeRoute);
+                    } else {
+                      Fluttertoast.showToast(
+                          msg: "Username or Password cannot be empty!!",
+                          toastLength: Toast.LENGTH_SHORT,
+                          gravity: ToastGravity.BOTTOM,
+                          backgroundColor: Colors.black54,
+                          textColor: Colors.white,
+                          fontSize: 16.0);
+                    }
+                  },
+                  child: Text("LogIn"),
+                )
+              ],
+            ),
           ),
         ),
       ),
