@@ -27,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Center(
         child: Text(
-          "CATALOG APP",
+          "Catalog Applicaiton",
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
       ),
