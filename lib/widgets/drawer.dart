@@ -13,6 +13,7 @@ class MyDrawer extends StatelessWidget {
         children: [
           DrawerHeader(
             padding: EdgeInsets.zero,
+            margin: EdgeInsets.zero,
             child: UserAccountsDrawerHeader(
               margin: EdgeInsets.zero,
               decoration: BoxDecoration(color: Colors.black54),
